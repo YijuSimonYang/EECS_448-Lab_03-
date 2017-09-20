@@ -1,46 +1,45 @@
 previous = function(){
-let image = document.getElementById("image").src;
-  if(image == "first.png")
-  {alert("First page");}
-  else{
-    if(image == "second.png"){
-      document.getElementById("image").src = "first.png";
-    }
-    else if(image == "third.jpeg"){
-      document.getElementById("image").src = "second.png";
-    }
-    else if(image == "four.jpeg"){
-      document.getElementById("image").src = "third.jpeg";
-    }
-    else if(image == "five.jpeg"){
-      document.getElementById("image").src = "four.jpeg";
-    }
-    else if(image == "six.jpeg"){
-      document.getElementById("image").src = "five.jpeg";
-    }
-  }
-}
+  let image = document.getElementById("image").src;
+  let path = "";
+  path = path + getpath(window.location.href);
+  if(image == path+"first.png"){
+    document.getElementById("image").src = path + "six.jpeg";
+  }else if(image == path+"second.png"){
+    document.getElementById("image").src = path + "first.png";
+  }else if(image == path+"third.jpeg"){
+    document.getElementById("image").src = path + "second.png";
+  }else if(image == path+"four.jpeg"){
+    document.getElementById("image").src = path + "third.jpeg";
+  }else if(image == path+"five.jpeg"){
+    document.getElementById("image").src = path + "four.jpeg";
+  }else if(image == path+"six.jpeg"){
+    document.getElementById("image").src = path + "five.jpeg";}
+
+ }
 
 
 next = function(){
   let image = document.getElementById("image").src;
-    if(image == "six.jpeg")
-    {alert("Last page");}
-    else{
-      if(image == "second.png"){
-        document.getElementById("image").src = "third.jpeg";
-      }
-      else if(image == "third.jpeg"){
-        document.getElementById("image").src = "four.jpeg";
-      }
-      else if(image == "four.jpeg"){
-        document.getElementById("image").src = "five.jpeg";
-      }
-      else if(image == "five.jpeg"){
-        document.getElementById("image").src = "six.jpeg";
-      }
-      else if(image == "first.png"){
-        document.getElementById("image").src = "second.png";
-      }
-    }
+  let path = "";
+  path = path + getpath(window.location.href);
+      if(image == path+"six.jpeg"){
+        document.getElementById("image").src = path+"first.png";
+      }else if(image == path+"second.png"){
+        document.getElementById("image").src = path+"third.jpeg";
+      }else if(image == path+"third.jpeg"){
+        document.getElementById("image").src = path+"four.jpeg";
+      }else if(image == path+"four.jpeg"){
+        document.getElementById("image").src = path+"five.jpeg";
+      }else if(image == path+"five.jpeg"){
+        document.getElementById("image").src = path+"six.jpeg";
+      }else if(image == path+"first.png"){
+        document.getElementById("image").src = path+"second.png";}
+}
+
+getpath = function(path){
+  newpath = "";
+  for(let i = 0; i < (path.length - 9); i++){
+    newpath = newpath + path[i];
+  }
+  return(newpath);
 }
