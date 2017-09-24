@@ -1,0 +1,40 @@
+pasd
+{
+  font-size: 150%;
+    color: blue;
+}
+pasd.body
+{
+    background-color: black;
+    color: white;
+}
+pasd1
+{
+  font-size: 150%;
+    color: white;
+}
+pasd11
+{
+  font-size: 200%;
+    color: white;
+}
+a
+{
+    color: white;
+}
+a:hover
+{
+    background-color: red;
+    color: white;
+}
+p
+{
+color: white; 
+}
+body
+{
+    color: white;
+    background-image: url(black18.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
